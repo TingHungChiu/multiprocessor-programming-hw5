@@ -32,6 +32,11 @@ public class Benchmark {
             threads[t].join();
             totalTime += threads[t].getElapsedTime();
         }
-        System.out.println(totalThread + " " +  totalIters/totalTime);
+        try{
+            System.out.println(totalThread + " " +  totalIters/totalTime);
+        }catch(ArithmeticException e){
+            System.out.println("TotalexecuteTime is too small");
+        }
+
     }
 }
